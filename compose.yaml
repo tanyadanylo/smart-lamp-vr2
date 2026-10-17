@@ -1,0 +1,31 @@
+services:
+  app:
+    build: .
+    ports: ["3000:3000"]
+    environment:
+      DB_HOST: db
+      DB_PORT: 3306
+      DB_NAME: smart_lamp_db
+      DB_USER: smart_lamp_app
+      DB_PASSWORD: ${DB_PASSWORD}
+      ENABLE_ESP: "false"
+    depends_on:
+      db:
+        condition: service_healthy
+
+  db:
+    image: mysql:8.0.43
+    environment:
+      MYSQL_DATABASE: smart_lamp_db
+      MYSQL_USER: smart_lamp_app
+      MYSQL_PASSWORD: ${DB_PASSWORD}
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+    volumes: ["mysql_data:/var/lib/mysql", "./init.sql:/docker-entrypoint-initdb.d/init.sql:ro"]
+    healthcheck:
+      test: ["CMD-SHELL", "mysqladmin ping -h 127.0.0.1 --protocol=tcp --silent"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+volumes:
+  mysql_data:
