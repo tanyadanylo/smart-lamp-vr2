@@ -2,9 +2,12 @@ const express = require('express');
 const cors = require('cors');
 const axios = require('axios');
 const db = require('./db');
+const swaggerUi = require('swagger-ui-express');
+const openapi = require('./openapi');
 
 const app = express();
 const PORT = Number(process.env.PORT) || 3000;
+
 
 const ENABLE_ESP = process.env.ENABLE_ESP === 'true';
 const ESP_IP = process.env.ESP_IP || 'http://192.168.4.1';
@@ -12,6 +15,8 @@ const ESP_IP = process.env.ESP_IP || 'http://192.168.4.1';
 app.use(cors());
 app.use(express.json());
 app.use(express.static(require('path').join(__dirname, '../frontend')));
+
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(openapi));
 
 let isLampOn = true;
 let isNightMode = false;
