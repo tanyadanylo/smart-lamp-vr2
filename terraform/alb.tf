@@ -1,4 +1,3 @@
-
 resource "aws_lb" "smart_lamp" {
   name               = "smart-lamp-alb"
   internal           = false
