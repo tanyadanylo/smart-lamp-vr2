@@ -1,0 +1,11 @@
+{
+    "cacheEnabled":  true,
+    "cacheType":  "redis",
+    "ttlSeconds":  40,
+    "statsScope":  "current ECS task",
+    "hits":  530,
+    "misses":  128,
+    "hitRate":  80.55,
+    "dbReads":  128,
+    "cacheErrors":  0
+}

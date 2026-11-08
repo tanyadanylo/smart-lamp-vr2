@@ -1,0 +1,165 @@
+{
+    "metrics": {
+        "vus_max": {
+            "value": 15,
+            "min": 15,
+            "max": 15
+        },
+        "http_req_connecting": {
+            "avg": 0.3255445038167939,
+            "min": 0,
+            "med": 0,
+            "p(95)": 0,
+            "p(99)": 0,
+            "max": 2039.6584
+        },
+        "http_reqs": {
+            "count": 10480,
+            "rate": 17.45976932447319
+        },
+        "iterations": {
+            "count": 1048,
+            "rate": 1.7459769324473189
+        },
+        "http_req_sending": {
+            "avg": 0.03709866412213741,
+            "min": 0,
+            "med": 0,
+            "p(95)": 0.5103,
+            "p(99)": 0.7129209999999999,
+            "max": 6.5049
+        },
+        "http_req_failed": {
+            "passes": 4,
+            "fails": 10476,
+            "thresholds": {
+                "rate<0.05": false
+            },
+            "value": 0.0003816793893129771
+        },
+        "http_req_blocked": {
+            "max": 2039.6584,
+            "avg": 0.34074724236641235,
+            "min": 0,
+            "med": 0,
+            "p(95)": 0,
+            "p(99)": 0.5668199999999982
+        },
+        "iteration_duration": {
+            "p(99)": 13215.622439999996,
+            "max": 16896.6145,
+            "avg": 6541.8777491412275,
+            "min": 2079.3725,
+            "med": 6554.911700000001,
+            "p(95)": 10392.36927
+        },
+        "http_req_receiving": {
+            "med": 10.3083,
+            "p(95)": 1160.7861499999995,
+            "p(99)": 2004.9756579999923,
+            "max": 7381.7452,
+            "avg": 314.749089246184,
+            "min": 0
+        },
+        "data_sent": {
+            "count": 1406688,
+            "rate": 2343.5541976626473
+        },
+        "data_received": {
+            "count": 3396340138,
+            "rate": 5658331.618027618
+        },
+        "http_req_duration{expected_response:true}": {
+            "med": 354.5899,
+            "p(95)": 1506.997975,
+            "p(99)": 2381.206475,
+            "max": 7490.3232,
+            "avg": 551.158611578847,
+            "min": 26.5553
+        },
+        "checks": {
+            "passes": 12558,
+            "fails": 17,
+            "value": 0.9986481113320079
+        },
+        "http_req_waiting": {
+            "avg": 236.21978410305354,
+            "min": 23.7286,
+            "med": 233.31234999999998,
+            "p(95)": 440.3652049999999,
+            "p(99)": 647.2424049999996,
+            "max": 1799.427
+        },
+        "http_req_duration": {
+            "p(99)": 2380.9955989999953,
+            "max": 7490.3232,
+            "avg": 551.0059720133588,
+            "min": 26.5553,
+            "med": 354.52955,
+            "p(95)": 1506.959195
+        },
+        "http_req_tls_handshaking": {
+            "p(95)": 0,
+            "p(99)": 0,
+            "max": 0,
+            "avg": 0,
+            "min": 0,
+            "med": 0
+        },
+        "vus": {
+            "min": 1,
+            "max": 15,
+            "value": 1
+        }
+    },
+    "root_group": {
+        "name": "",
+        "path": "",
+        "id": "d41d8cd98f00b204e9800998ecf8427e",
+        "groups": {},
+        "checks": {
+                "Preset created (201)": {
+                    "id": "db290fa453e9fa4459da52565c71318b",
+                    "passes": 1048,
+                    "fails": 0,
+                    "name": "Preset created (201)",
+                    "path": "::Preset created (201)"
+                },
+                "Created preset has ID": {
+                    "name": "Created preset has ID",
+                    "path": "::Created preset has ID",
+                    "id": "d6ad21903f61d136ae843b8abda09e2e",
+                    "passes": 1048,
+                    "fails": 0
+                },
+                "Presets returned (200)": {
+                    "path": "::Presets returned (200)",
+                    "id": "48a71898240d362eeaaf7e88b2ffc8c8",
+                    "passes": 5238,
+                    "fails": 2,
+                    "name": "Presets returned (200)"
+                },
+                "New preset found in list": {
+                    "name": "New preset found in list",
+                    "path": "::New preset found in list",
+                    "id": "6f720228ee9069d9f18993beefea220c",
+                    "passes": 1034,
+                    "fails": 13
+                },
+                "Device logs returned (200)": {
+                    "name": "Device logs returned (200)",
+                    "path": "::Device logs returned (200)",
+                    "id": "f0635cbd41c73a9249943f1846597096",
+                    "passes": 2096,
+                    "fails": 0
+                },
+                "Sensor data returned (200)": {
+                    "name": "Sensor data returned (200)",
+                    "path": "::Sensor data returned (200)",
+                    "id": "5caa672e5bea950afcfe0cfa69df5e1a",
+                    "passes": 2094,
+                    "fails": 2
+                }
+            }
+    }
+}

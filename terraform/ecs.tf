@@ -1,6 +1,11 @@
 resource "aws_ecs_cluster" "smart_lamp" {
   name = "smart-lamp-cluster"
 
+  setting {
+    name  = "containerInsights"
+    value = "enabled"
+  }
+
   tags = {
     Project = "smart-lamp"
   }
@@ -30,7 +35,7 @@ resource "aws_ecs_task_definition" "smart_lamp" {
   container_definitions = jsonencode([
     {
       name      = "smart-lamp"
-      image     = "${aws_ecr_repository.smart_lamp.repository_url}:swagger-v1"
+      image     = "${aws_ecr_repository.smart_lamp.repository_url}:redis-v1"
       essential = true
 
       portMappings = [
@@ -45,7 +50,9 @@ resource "aws_ecs_task_definition" "smart_lamp" {
         { name = "DB_PORT", value = "3306" },
         { name = "DB_USER", value = "lamp_admin" },
         { name = "DB_NAME", value = "smart_lamp_db" },
-        { name = "ENABLE_ESP", value = "false" }
+        { name = "ENABLE_ESP", value = "false" },
+        { name = "CACHE_ENABLED", value = "true" },
+        { name = "REDIS_URL", value = "redis://redis.smart-lamp.internal:6379" }
       ]
 
       secrets = [
@@ -113,6 +120,7 @@ resource "aws_ecs_task_definition" "db_init" {
   execution_role_arn = aws_iam_role.ecs_execution.arn
   task_role_arn      = aws_iam_role.ecs_task.arn
 
+
   container_definitions = jsonencode([
     merge(
       jsondecode(aws_ecs_task_definition.smart_lamp.container_definitions)[0],
@@ -120,6 +128,17 @@ resource "aws_ecs_task_definition" "db_init" {
         name    = "smart-lamp-db-init"
         image   = "${aws_ecr_repository.smart_lamp.repository_url}:db-init"
         command = ["node", "backend/init-db.js"]
+
+        mountPoints    = []
+        systemControls = []
+        volumesFrom    = []
+        portMappings = [
+          {
+            containerPort = 3000
+            hostPort      = 3000
+            protocol      = "tcp"
+          }
+        ]
       }
     )
   ])

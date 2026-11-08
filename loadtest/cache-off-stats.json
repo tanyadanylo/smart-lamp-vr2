@@ -1,0 +1,11 @@
+{
+    "cacheEnabled":  false,
+    "cacheType":  "disabled",
+    "ttlSeconds":  40,
+    "statsScope":  "current ECS task",
+    "hits":  0,
+    "misses":  166,
+    "hitRate":  0,
+    "dbReads":  166,
+    "cacheErrors":  0
+}

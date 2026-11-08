@@ -1,0 +1,165 @@
+{
+    "root_group": {
+        "id": "d41d8cd98f00b204e9800998ecf8427e",
+        "groups": {},
+        "checks": {
+                "Preset created (201)": {
+                    "name": "Preset created (201)",
+                    "path": "::Preset created (201)",
+                    "id": "db290fa453e9fa4459da52565c71318b",
+                    "passes": 3114,
+                    "fails": 0
+                },
+                "Created preset has ID": {
+                    "path": "::Created preset has ID",
+                    "id": "d6ad21903f61d136ae843b8abda09e2e",
+                    "passes": 3114,
+                    "fails": 0,
+                    "name": "Created preset has ID"
+                },
+                "Presets returned (200)": {
+                    "name": "Presets returned (200)",
+                    "path": "::Presets returned (200)",
+                    "id": "48a71898240d362eeaaf7e88b2ffc8c8",
+                    "passes": 15569,
+                    "fails": 1
+                },
+                "New preset found in list": {
+                    "name": "New preset found in list",
+                    "path": "::New preset found in list",
+                    "id": "6f720228ee9069d9f18993beefea220c",
+                    "passes": 3114,
+                    "fails": 0
+                },
+                "Device logs returned (200)": {
+                    "name": "Device logs returned (200)",
+                    "path": "::Device logs returned (200)",
+                    "id": "f0635cbd41c73a9249943f1846597096",
+                    "passes": 6228,
+                    "fails": 0
+                },
+                "Sensor data returned (200)": {
+                    "name": "Sensor data returned (200)",
+                    "path": "::Sensor data returned (200)",
+                    "id": "5caa672e5bea950afcfe0cfa69df5e1a",
+                    "passes": 6228,
+                    "fails": 0
+                }
+            },
+        "name": "",
+        "path": ""
+    },
+    "metrics": {
+        "vus_max": {
+            "value": 15,
+            "min": 15,
+            "max": 15
+        },
+        "http_req_duration{expected_response:true}": {
+            "max": 1914.74,
+            "avg": 118.25427619384098,
+            "min": 24.4757,
+            "med": 73.0664,
+            "p(95)": 361.1652,
+            "p(99)": 526.5729959999995
+        },
+        "http_req_waiting": {
+            "p(95)": 177.887505,
+            "p(99)": 269.0761300000001,
+            "max": 644.464,
+            "avg": 74.23929364804151,
+            "min": 23.7701,
+            "med": 53.878
+        },
+        "http_req_receiving": {
+            "min": 0,
+            "med": 0.6023,
+            "p(95)": 224.03940499999993,
+            "p(99)": 366.62462800000037,
+            "max": 1587.0765,
+            "avg": 43.973545372511246
+        },
+        "vus": {
+            "value": 1,
+            "min": 1,
+            "max": 15
+        },
+        "http_req_blocked": {
+            "avg": 0.030149341682723162,
+            "min": 0,
+            "med": 0,
+            "p(95)": 0,
+            "p(99)": 0.5546830000000001,
+            "max": 79.456
+        },
+        "http_req_connecting": {
+            "med": 0,
+            "p(95)": 0,
+            "p(99)": 0,
+            "max": 62.2562,
+            "avg": 0.018045953757225435,
+            "min": 0
+        },
+        "http_req_sending": {
+            "med": 0,
+            "p(95)": 0.5162,
+            "p(99)": 0.7564,
+            "max": 11.1367,
+            "avg": 0.04046301862556193,
+            "min": 0
+        },
+        "checks": {
+            "passes": 37367,
+            "fails": 1,
+            "value": 0.9999732391350888
+        },
+        "http_req_duration": {
+            "p(95)": 361.1652,
+            "p(99)": 526.5686380000003,
+            "max": 1914.74,
+            "avg": 118.25330203917837,
+            "min": 24.4757,
+            "med": 73.06985
+        },
+        "http_req_failed": {
+            "passes": 1,
+            "fails": 31139,
+            "thresholds": {
+                "rate<0.05": false
+            },
+            "value": 0.000032113037893384715
+        },
+        "data_received": {
+            "count": 2045808744,
+            "rate": 3404893.3714406835
+        },
+        "iteration_duration": {
+            "max": 4600.2225,
+            "avg": 2192.588113872832,
+            "min": 1343.1878,
+            "med": 2072.0856999999996,
+            "p(95)": 3415.44717,
+            "p(99)": 3851.271788
+        },
+        "http_req_tls_handshaking": {
+            "p(99)": 0,
+            "max": 0,
+            "avg": 0,
+            "min": 0,
+            "med": 0,
+            "p(95)": 0
+        },
+        "data_sent": {
+            "rate": 6959.265736248407,
+            "count": 4181431
+        },
+        "http_reqs": {
+            "count": 31140,
+            "rate": 51.82712210886067
+        },
+        "iterations": {
+            "count": 3114,
+            "rate": 5.182712210886067
+        }
+    }
+}
